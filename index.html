@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memory Game Final</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="victory-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🎉 Victory! 🎉</h2>
+      <p>You won jeet gye tum😁 <span id="final-time">0</span>s left!</p>
+      <button onclick="restartGame()">Play Again</button>
+    </div>
+  </div>
+
+  <div id="game-over-modal" class="modal hidden">
+    <div class="modal-content lose-content">
+      <h2 style="color: #ff5e62">💀 Game Over Haar gye tum💀</h2>
+      <p>Time is up!</p>
+      <button onclick="restartGame()" style="background: #ff5e62">Try Again</button>
+    </div>
+  </div>
+
+  <h1>🧠 Memory Master</h1>
+
+  <div class="full-screen-wrapper">
+    <div class="left-half">
+      <div class="control-panel">
+        <div class="stats">
+            <div class="stat-box">
+                <span class="label">Time Left</span>
+                <span id="timer" class="value">0s</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Flips</span>
+                <span id="flip-counter" class="value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Best</span>
+                <span id="best-score" class="value">-</span>
+            </div>
+        </div>
+
+        <div class="difficulty-selector">
+            <p>Difficulty Level:</p>
+            <div class="btn-group">
+                <button onclick="setDifficulty('easy')">Easy</button>
+                <button onclick="setDifficulty('normal')" class="active-mode">Normal</button>
+                <button onclick="setDifficulty('hard')">Hard</button>
+            </div>
+        </div>
+
+        <button id="refresh-btn">Restart Game</button>
+      </div>
+    </div>
+
+    <div class="right-half">
+      <div class="container">
+        <div class="game-board" id="game-board"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="confetti-container"></div>
+  <img src="bg.jpg" class="background-image" alt="" onerror="this.style.display='none'"/>
+
+  <script src="script.js"></script>
+</body>
+</html>
